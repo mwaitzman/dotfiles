@@ -40,7 +40,7 @@ alias et='/home/mwait/emacs-ng/src/emacs -nw --load /home/mwait/.emacs.d/init.el
 #nice little hack
 alias cd='
 	cd() {
-		"$1";
+		z "$1";
 		exa -a;
 	};
 	cd;

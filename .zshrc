@@ -72,6 +72,7 @@ ZSH_THEME="random"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 	git
+	git-open
 	zsh-autosuggestions
 	rust
 	alias-finder
