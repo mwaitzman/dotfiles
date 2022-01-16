@@ -36,3 +36,12 @@ alias textql='docker run --rm -it -v $(pwd):/tmp textql '
 
 alias et='/home/mwait/emacs-ng/src/emacs -nw --load /home/mwait/.emacs.d/init.el'
 ###export EDITOR="/usr/local/bin/emacs -nw"
+
+#nice little hack
+alias cd='
+	cd() {
+		"$1";
+		exa -a;
+	};
+	cd;
+'
