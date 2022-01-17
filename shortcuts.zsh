@@ -37,11 +37,18 @@ alias textql='docker run --rm -it -v $(pwd):/tmp textql '
 alias et='/home/mwait/emacs-ng/src/emacs -nw --load /home/mwait/.emacs.d/init.el'
 ###export EDITOR="/usr/local/bin/emacs -nw"
 
-#nice little hack
-alias cd='
-	cd() {
-		z "$1";
-		exa -a;
-	};
-	cd;
-'
+##nice little hack
+#alias cd='
+#	cd() {
+#		z "$1";
+#		exa -a;
+#	};
+#	cd;
+#'
+## there appears to be a bug causing exa to display the root directory contents instead. not sure why. Are the commands not executed sequentially??
+##DISABLED FOR NOW — very broken
+
+# SYNOPSIS
+#   quoteRe <text>
+quoteRe() { sed -e 's/[^^]/[&]/g; s/\^/\\^/g; $!a\'$'\n''\\n' <<<"$1" | tr -d '\n'; }
+##gonna delete this POC later
