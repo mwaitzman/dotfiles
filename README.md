@@ -15,3 +15,6 @@ Ensure they're actually up to date (I thought hardlinks were always up to date, 
 # keybindings
 Using Crontab with the included crontab file, [evremap](https://github.com/wez/evremap) is run on boot with the GLOBAL_KEYMAP.toml file, to set keyboard settings that apply to *everything* v both the Linux Virtual Console, Wayland sessions, and X11 sessions.
 Then, [xremap](https://github.com/k0kubun/xremap) will be used in Wayland for application-specific keybindings, and to launch commands via keybinds (e.g. s-R to launch Onagre).
+
+
+Espanso is used as a text expander

@@ -1,6 +1,9 @@
 # If you come from bash you might have to change your $PATH.
  export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+#sometimes these stuff randomly aren't on the path. hopefully this will fix it
+export PATH=$PATH:/home/mwait/.cargo/bin/
+
 # Path to your oh-my-zsh installation.
 export ZSH="/home/mwait/.oh-my-zsh"
 
@@ -160,3 +163,5 @@ export VISUAL='emacs'
 fpath=(~/.zsh/functions $fpath)
 autoload -Uz compinit
 compinit -u
+
+setopt COMBINING_CHARS
