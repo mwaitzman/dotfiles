@@ -156,3 +156,7 @@ eval "$(atuin init zsh)"
 
 export EDITOR='kiro'
 export VISUAL='emacs'
+
+fpath=(~/.zsh/functions $fpath)
+autoload -Uz compinit
+compinit -u

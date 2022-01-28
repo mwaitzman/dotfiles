@@ -52,3 +52,7 @@ alias et='/home/mwait/emacs-ng/src/emacs -nw --load /home/mwait/.emacs.d/init.el
 #   quoteRe <text>
 quoteRe() { sed -e 's/[^^]/[&]/g; s/\^/\\^/g; $!a\'$'\n''\\n' <<<"$1" | tr -d '\n'; }
 ##gonna delete this POC later
+
+alias sudo=doas
+
+alias evremap='~/src/github.com/wez/evremap/target/release/evremap'

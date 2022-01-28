@@ -1,0 +1,11 @@
+# When our `input` is matched, our list of `output` is prevented from
+# matching as the `input` of subsequent rules.
+
+[[remap]]
+input = ["KEY_LEFTSHIFT", "KEY_RIGHTSHIFT"]
+output = ["KEY_CAPSLOCK"]
+
+[[remap]]
+input = ["KEY_CAPSLOCK"]
+output = ["KEY_HYPER"]
+

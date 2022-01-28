@@ -450,3 +450,5 @@
 
 (use-package magit-todos
   :defer t)
+
+(defalias 'yes-or-no-p 'y-or-n-p);; reduce the annoyance factor
