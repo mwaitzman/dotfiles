@@ -165,3 +165,5 @@ autoload -Uz compinit
 compinit -u
 
 setopt COMBINING_CHARS
+
+alias ffd='fd -E \'/mnt\' -E \'/run/\'' 
