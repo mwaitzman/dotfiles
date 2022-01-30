@@ -55,8 +55,6 @@ alias ci='cargo install'
 # Created by `pipx` on 2022-01-10 21:54:33#TODO: not sure if this was actually created by pipx, or it it was just shitty placement. must check and get rid of it if it's unnecessary
 export PATH="$PATH:/home/mwait/.local/bin"
 
-
-
 ##TODO: is this a relic? check and delete if so
 ##[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
