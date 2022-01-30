@@ -1,4 +1,13 @@
-##oh-my-zsh relic. TODO: replicate fucntionality
+##underatedly so useful
+setopt autocd
+
+setopt cdablevars
+
+## unsure if I want this
+setopt globdots
+
+
+##oh-my-zsh relic. TODO: replicate funvtionality
  COMPLETION_WAITING_DOTS="true"
 
 
