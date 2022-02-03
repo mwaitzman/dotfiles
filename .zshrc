@@ -106,7 +106,7 @@ source $zshortcuts
 ##NOTE: **MUST** be at the end of this file
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# fix keybinds
+# fix keybinds # from https://serverfault.com/a/386938
 case "${TERM}" in
   cons25*|linux) # plain BSD/Linux console
     bindkey '\e[H'    beginning-of-line   # home 
