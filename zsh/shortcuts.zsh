@@ -73,3 +73,7 @@ alias plz=sudo
 
 ## sudo replacement that can be dropped in for most purposes
 alias sudo=doas
+
+##going to use this to smartly edit various files (and run the  appropriate pre/post-edit commands
+#function edit() {
+#}

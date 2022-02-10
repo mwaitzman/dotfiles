@@ -145,3 +145,5 @@ case "${TERM}" in
     bindkey '^[[1;5D' backward-word       # ctrl left
     ;;
 esac
+
+pcshw='~/devel/my_PCS_work/Homework/'
