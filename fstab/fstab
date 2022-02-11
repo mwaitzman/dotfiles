@@ -1,0 +1,24 @@
+# Static information about the filesystems.
+# See fstab(5) for details.
+
+# <file system> <dir> <type> <options> <dump> <pass>
+
+
+# /dev/sda1 LABEL=SYSTEM_DRV
+UUID=84D6-19A2      	/boot/efi 	vfat      	rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro	0 2
+
+
+# SSD's Windows 10 installation, for gaming
+/dev/nvme0n1p2        /mnt/win10       ntfs    defaults        0       0
+
+# SSD Linux partition (/dev/nvme0n1p3 LABEL=H)
+UUID=6acf0e14-5988-4306-8be9-ef0f40caf72a	/         	ext4      	rw,relatime	0 1
+
+/dev/nvme0n1p4 /mnt/swap  swap
+
+
+# Internal HDD
+/dev/sda3 /mnt/ihdd_ntfs ntfs
+
+#External HDD, only mount when actually plugged in (don't wait if it can't be found)
+/dev/sdd1 /mnt/ehdd ntfs nofail

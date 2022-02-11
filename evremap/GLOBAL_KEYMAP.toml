@@ -1,11 +1,25 @@
 # When our `input` is matched, our list of `output` is prevented from
 # matching as the `input` of subsequent rules.
 
+
+#use caps lock as hyper (TODO: maybe use as Meta instead because evidently (https://unix.stackexchange.com/questions/614572/is-it-possible-to-configure-the-hyper-modifier-key-on-wayland, TODO: verify) hyper nowadays is just the combination of other keys, so I couldn't do Hyper+ALt+Shift+= because hyper already includes alt
 [[remap]]
 input = ["KEY_LEFTSHIFT", "KEY_RIGHTSHIFT"]
 output = ["KEY_CAPSLOCK"]
 
-[[remap]]
+[[dual_role]]
 input = ["KEY_CAPSLOCK"]
-output = ["KEY_HYPER"]
+hold = ["KEY_LEFTMETA"]
+tap = ["KEY_ESC"]
+
+
+# brightness
+[[remap]]
+input = ["KEY_LEFTMETA", "KEY_LEFTALT", "KEY_LEFTSHIFT", "KEY_MINUS"]
+output = ["KEY_BRIGHTNESS_MIN"]
+
+[[remap]]
+input = ["KEY_LEFTMETA", "KEY_LEFTALT", "KEY_LEFTSHIFT", "KEY_EQUAL"]
+output = ["KEY_BRIGHTNESS_MAX"]
+
 
