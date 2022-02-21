@@ -41,6 +41,7 @@ alias firepwd='python /home/mwait/firepwd/firepwd.py'
 
 alias py=python
 
+#powerpill instead of pacman seems broken currently, unless it's not drop-in
 alias pacman='sudo pacman -Sy'
 
 alias 'sudo restart now'='sudo reboot now' #because I keep on doing that...
@@ -77,3 +78,16 @@ alias sudo=doas
 ##going to use this to smartly edit various files (and run the  appropriate pre/post-edit commands
 #function edit() {
 #}
+
+alias xa='exa -a'
+
+# enable dual monitor setup for class
+function dualmonon() {
+	xrandr --output eDP-1 --auto
+	xrandr --output DP-1 --primary --left-of eDP-1
+}
+
+# return to normal monitor setup
+function dualmonoff() {
+	xrandr --output eDP-1 --off
+}
