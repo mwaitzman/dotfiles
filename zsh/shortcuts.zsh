@@ -16,8 +16,8 @@ alias cls='clear'
 alias dic=dictionary-cli
 
 alias dotdrop='/home/mwait/devel/other/dotfiles/dotdrop.sh  --cfg=/home/mwait/devel/other/dotfiles/config.yaml'
-
-alias lo=libreoffice
+#get rid of that annoying useless recovery prompt EVERY time I open anything in libreoffice
+alias lo=' libreoffice --norestore'
 
 alias atom=atom-dev
 alias apm=apm-dev
