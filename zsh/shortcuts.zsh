@@ -28,7 +28,7 @@ alias evremap='~/src/github.com/wez/evremap/target/release/evremap'
 
 
 devel='/home/mwait/devel/'
-pcs='/home/mwait/devel/my_PCS_work/Homework/'
+alias pcs=' cd /home/mwait/devel/my_PCS_work/Homework/'
 
 repos='~/repos'
 
