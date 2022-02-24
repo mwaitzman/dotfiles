@@ -26,8 +26,26 @@
 ;; Make backups of files, even when they're in version control
 (setq vc-make-backup-files t)
 
+;;make it easy to open recently edited files
+(recentf-mode 1)
+(global-set-key (kbd "M-s M-r") 'recentf-open-files)
+
+(savehist-mode 1)
+
+(save-place-mode 1)
 
 (global-set-key (kbd "C-x g") 'webjump)
+
+;;Don't bloat my handcrafted config - put that stuff elsewhere
+(customize-save-variable 'custom-file  (expand-file-name "generated_customizations.el" user-emacs-directory))
+(load custom-file)
+
+;;watch open files for changes on disk and refresh the buffers if changes are made and the buffers have no unsaved changes
+(global-auto-revert-mode 1)
+
+;;make Dired, etc. automatically load external changes to content
+(setq global-auto-revert-non-file-buffers t)
+
 
 ;; Add Urban Dictionary to webjump
 (eval-after-load "webjump"
@@ -55,7 +73,6 @@
 
 
 ;; full screen magit-status
-
 (defadvice magit-status (around magit-fullscreen activate)
   (window-configuration-to-register :magit-fullscreen)
   ad-do-it
@@ -115,7 +132,6 @@
 
 (global-set-key (kbd "<C-return>") 'open-line-below)
 (global-set-key (kbd "<C-S-return>") 'open-line-above)
-
 
 
 (defun move-line-down ()
@@ -231,23 +247,11 @@
   (lsp-ui-sideline-show-hover t)
   (lsp-ui-doc-enable nil))
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   '(astyle clang-format format-all eglot csharp-mode magit yasnippet rustic lsp-ui flycheck company)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+
 
 ;(use-package elcord)
 ;(require 'elcord)
-(elcord-mode)
+(elcord-mode 1)
 
 ;(add-to-list 'load-path "~/.emacs.d/ergoemacs-mode")
 ;(require 'ergoemacs-mode)
@@ -257,7 +261,7 @@
 
 (setq show-paren-delay 0)
 (show-paren-mode 1)
-(setq electric-pair-mode 1)
+(electric-pair-mode 1)
 
 ;;(global-set-key (kbd "C-z") 'undo)
 ;;(cua-mode t) ;; Common User Access mode - sets up standard keyboard shortcuts as defined by IBM
@@ -275,6 +279,8 @@
 (defun my-csharp-mode-hook ()
   (eglot-ensure t)
 (add-hook 'csharp-mode-hook 'my-csharp-mode-hook))
+
+
 
 (global-ligature-mode t)
 ;; Enable the www ligature in every possible major mode
@@ -294,8 +300,7 @@
 
 ;;;(global-ligature-mode 't)
 
-;;; native-compile all Elisp files under a directory
-;    (native-compile-async "/path/to/packages" 'recursively)
+;; native-compile all Elisp files under a directory(native-compile-async "/path/to/packages" 'recursively)
 
 
 ;;Replace the default Emacs help keybindings with helpful's (https://github.com/Wilfred/helpful)
