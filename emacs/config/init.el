@@ -457,3 +457,44 @@
   :defer t)
 
 (defalias 'yes-or-no-p 'y-or-n-p);; reduce the annoyance factor
+
+
+;;Act like a modern editor - when making a selection and then starting to type, the selected text will be deleted, and replaced by the new one being typed. #CREDIT: https://github.com/yanivdll/.emacs.d/blob/master/config.org
+(delete-selection-mode 1)
+
+
+
+
+(defun comment-or-uncomment-region-or-line ()
+    "Comments or uncomments the region or the current line if there's no active region."
+    (interactive)
+    (let (beg end)
+	(if (region-active-p)
+	    (setq beg (region-beginning) end (region-end))
+	    (setq beg (line-beginning-position) end (line-end-position)))
+	(comment-or-uncomment-region beg end)))
+
+
+;;doesn't work - C-/ still has old behavior (undo)
+(global-unset-key (kbd "C-/"))
+(global-set-key (kbd "C-/") 'comment-or-uncomment-region-or-line)
+
+
+
+
+;;reload init.el
+(global-set-key (kbd "M-<f5>") (lambda() (interactive)(load-file "~/.emacs.d/init.el")))
+
+
+
+
+
+(use-package undo-tree
+:ensure t
+:init
+(global-undo-tree-mode))
+
+
+
+(setq auto-save-list-file-prefix (expand-file-name "backups/autosaves/sessions/" user-emacs-directory)
+      auto-save-file-name-transforms `((".*" ,(expand-file-name "backups/autosaves/" user-emacs-directory) t)))
