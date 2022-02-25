@@ -91,3 +91,5 @@ function dualmonon() {
 function dualmonoff() {
 	xrandr --output eDP-1 --off
 }
+
+alias diff='diff -s'
