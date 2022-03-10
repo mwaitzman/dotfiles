@@ -1,0 +1,10 @@
+# If set to true, never revert the color after input or failure.
+one_way = false
+
+#runs on auth failure; command is run with `sh -c <COMMAND>`
+#fail_command = TODO: take picture with camera(s?) and write to a special access log file
+
+[colors]
+init_color = 0x20190b
+input_color = 253827
+fail_color = 0xfa1d05
