@@ -93,3 +93,13 @@ function dualmonoff() {
 }
 
 alias diff='diff -s'
+
+function vol_up() {
+pamixer -i 5
+pamixer --unmute
+}
+
+function vol_down() {
+pamixer -d 5
+pamixer --unmute
+}

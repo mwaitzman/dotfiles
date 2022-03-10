@@ -1,1 +1,0 @@
-@reboot sudo /home/mwait/src/github.com/wez/evremap/target/release/evremap /home/mwait/.config/evremap/GLOBAL_KEYMAP.toml

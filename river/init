@@ -160,3 +160,5 @@ riverctl default-layout rivertile
 exec rivertile -view-padding 6 -outer-padding 6
 
 riverctl map normal Super R spawn '/home/mwait/.cargo/bin/onagre'
+riverctl map normal Super+Shift R spawn 'yofi'
+riverctl map normal super+Shift F spawn '/usr/lib/firefox-developer-edition/firefox-bin'
