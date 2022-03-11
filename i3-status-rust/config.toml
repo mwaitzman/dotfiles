@@ -1,5 +1,20 @@
-theme = "solarized-dark"
-icons = "awesome"
+theme = "dracula"
+icons = "awesome5"
+
+[[block]]
+block = "pacman"
+interval = 600
+format = "{pacman} + {aur} = {both} updates available"
+format_singular = "{both} update available"
+format_up_to_date = "system up to date"
+critical_updates_regex = "(linux|linux-lts|linux-zen)"
+# aur_command should output available updates to stdout (ie behave as echo -ne "update\n")
+aur_command = "paru -Qua"
+# pop-up a menu showing the available updates. Replace wofi with your favourite menu command.
+#on_click = "fakeroot pacman -Qu --dbpath /tmp/checkup-db-yourusername/ | wofi --show dmenu"
+
+#[[block]]
+#block = "kdeconnect"
 
 [[block]]
 block = "disk_space"
@@ -21,15 +36,51 @@ format_swap = "{swap_used_percents}"
 block = "cpu"
 interval = 1
 
+#[[block]]
+#block = "nvidia_gpu"
+#label = "GT 1050Ti "
+#show_memory = true
+#show_clocks = true
+#interval = 1
+
 [[block]]
 block = "load"
 interval = 1
 format = "{1m}"
 
 [[block]]
+block = "net"
+format = "{ssid} {signal_strength} [{speed_up;K*B}/{speed_down;K*B}]"
+interval = 3
+hide_inactive = true
+
+#TODO: add bluetooth block and only show if a device is connected
+
+#[[block]]
+#block = "backlight"
+#minimum = 0
+#maximum = 100
+#cycle = [100, 50, 0, 50]
+
+[[block]]
 block = "sound"
+step_width = 1
+headphones_indicator = true
+
+[[block]]
+block = "music"
+buttons = ["prev", "play", "next"]
+format = "{player} (/{avail}) {artist} - {title}"
+dynamic_width = false
+marquee_speed = 0.15
+marquee_interval = 2
+max_width = 63
 
 [[block]]
 block = "time"
 interval = 5
 format = "%a %y/%m/%d %R"
+
+[[block]]
+block = "uptime"
+#interval = 1
