@@ -103,3 +103,8 @@ function vol_down() {
 pamixer -d 5
 pamixer --unmute
 }
+
+
+alias fm='pcmanfm'
+
+sd ="shutdown"
