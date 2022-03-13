@@ -1,4 +1,4 @@
-theme = "dracula"
+theme = "space-villain"
 icons = "awesome5"
 
 [[block]]
@@ -13,13 +13,14 @@ format = "{pacman} + {aur} = {both} updates available"
 format_singular = "{both} update available"
 format_up_to_date = "system up to date"
 critical_updates_regex = "(linux|linux-lts|linux-zen)"
-# aur_command should output available updates to stdout (ie behave as echo -ne "update\n")
+## aur_command should output available updates to stdout (ie behave as echo -ne "update\n")
 aur_command = "paru -Qua"
 # pop-up a menu showing the available updates. Replace wofi with your favourite menu command.
-#on_click = "fakeroot pacman -Qu --dbpath /tmp/checkup-db-yourusername/ | wofi --show dmenu"
+on_click = "fakeroot pacman -Qu --dbpath /tmp/checkup-db-mwait/ | yofi dialog"
 
-#[[block]]
-#block = "kdeconnect"
+[[block]]
+block = "kdeconnect"
+on_click = "kdeconnect-sms"
 
 [[block]]
 block = "disk_space"
@@ -30,6 +31,8 @@ unit = "GB"
 interval = 20
 warning = 20.0
 alert = 10.0
+##NOTE: doesn't display all files (due to insufficient perms to view root-owned files, I think)
+on_click = "alacritty -e diskonaut -a /"
 
 [[block]]
 block = "memory"
@@ -42,26 +45,22 @@ block = "cpu"
 interval = 1
 format = "{utilization} {barchart}"
 
-#[[block]]
-#block = "nvidia_gpu"
-#label = "GT 1050Ti "
-#show_memory = true
-#show_clocks = true
-#interval = 1
-
 [[block]]
 block = "load"
 interval = 1
 format = "{1m}"
+on_click = "alacritty -e btm"
 
 [[block]]
 block = "net"
 format = "{ssid} {signal_strength} [{speed_up;K*B}/{speed_down;K*B}]"
 interval = 3
 hide_inactive = true
+on_click = "alacritty -e bandwhich"
 
 #TODO: add bluetooth block and only show if a device is connected
 
+#TODO: display external monitor brightness, if even possible
 #[[block]]
 #block = "backlight"
 #minimum = 0
@@ -72,6 +71,7 @@ hide_inactive = true
 block = "sound"
 step_width = 1
 headphones_indicator = true
+on_click = "pavucontrol"
 
 [[block]]
 block = "music"
