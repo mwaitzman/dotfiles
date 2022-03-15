@@ -269,3 +269,7 @@ bar {
 
 	bindsym $Super+Print /home/mwait/scripts/select_window.sh
 	bindsym $Super+Shift+S exec wayshot -s "$(slurp -f '%x %y %w %h')"
+
+	# just for now until I get chording swhkd working
+	bindsym $Super+N fnottctl dismiss
+	bindsym $Super+Shift+N fnottctl dismiss all
