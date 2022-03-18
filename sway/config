@@ -257,8 +257,8 @@ bar {
 
 ### common global keybinds
 
-	bindsym XF86AudioRaiseVolume exec vol_up
-	bindsym XF86AudioLowerVolume exec vol_down
+	bindsym XF86AudioRaiseVolume exec ~/scripts/bin/compiled/vol_up
+	bindsym XF86AudioLowerVolume exec ~/scripts/bin/compiled/vol_down
 	bindsym XF86AudioMute exec 'pamixer --toggle-mute'
 
 
@@ -267,7 +267,7 @@ bar {
 	bindsym XF86AudioNext exec 'playerctl next'
 
 
-	bindsym $Super+Print /home/mwait/scripts/select_window.sh
+	bindsym $Super+Print /home/mwait/scripts/bin/interpreted/select_window.sh
 	bindsym $Super+Shift+S exec wayshot -s "$(slurp -f '%x %y %w %h')"
 
 	# just for now until I get chording swhkd working
