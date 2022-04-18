@@ -8,7 +8,7 @@ cd $HOME/emacs-ng/
 
 ## set configuration options
 ./configure \
-	--enable-link-time-optimization \
+#	--enable-link-time-optimization \##supposedly LOWERS performance, so disabling
 	--with-native-compilation \
 	--with-sound=alsa \
 	--with-webrender

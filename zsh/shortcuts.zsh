@@ -107,4 +107,8 @@ pamixer --unmute
 
 alias fm='pcmanfm'
 
-sd ="shutdown"
+alias sd="shutdown"
+
+alias sshvps='ssh -i ~/.ssh/id_rsa_VPS root@107.152.41.236'
+
+alias mountvps='plz sshfs -o allow_other,auto_unmount,IdentityFile='/home/mwait/.ssh/id_rsa_VPS' root@107.152.41.236:/ /mnt/vps0/'

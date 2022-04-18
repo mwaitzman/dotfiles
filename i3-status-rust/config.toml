@@ -84,8 +84,8 @@ max_width = 63
 
 [[block]]
 block = "time"
-interval = 5
-format = "%a %y/%m/%d %R"
+interval = 1
+format = "%a %y/%m/%d %H:%M:%S"
 
 [[block]]
 block = "uptime"
