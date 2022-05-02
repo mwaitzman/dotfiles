@@ -17,3 +17,7 @@ super + shift + n
 # swap to the most recently used window (TODO: get more powerful and flexible swapping working - this is rather limited and far inferior to e.g. Windows' alttab functionality)
 alt + tab
 	pkill -e -SIGUSR1 sway-alttab
+
+# view clipboard history
+super + v
+	cliphist list | rofi -dmenu | cliphist decode | wl-copy
