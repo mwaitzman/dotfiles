@@ -1,0 +1,19 @@
+# launch firefox
+super + shift + f
+	/usr/lib/firefox-developer-edition/firefox-bin
+
+# reload the swhkd config file
+super + ctrl + k
+	sudo pkill -HUP swhkd
+
+# dismiss a notification (the highest priority one - hopefully functions as the most recent)
+super + n
+	fnottctl dismiss
+
+#dismiss all notifications
+super + shift + n
+	fnottctl dismiss all
+
+# swap to the most recently used window (TODO: get more powerful and flexible swapping working - this is rather limited and far inferior to e.g. Windows' alttab functionality)
+alt + tab
+	pkill -e -SIGUSR1 sway-alttab
