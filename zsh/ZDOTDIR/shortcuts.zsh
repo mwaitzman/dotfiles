@@ -130,6 +130,7 @@ function startthestuff() {
 	setsid -f $(fnott)&
 	setsid -f /usr/lib/kdeconnectd&
 	setsid -f $(ff)&
+	swaymsg reload
 }
 
 
@@ -159,9 +160,30 @@ fdaliasdef() {
 
 # edit an alias in place
 editaliasdef() {
-	alias_output="$(alias $1)"
-	nano +$(zsh -ixc : 2>&1 | rg -m 1 $alias_output | rev | sed 's/$(echo $alias_output | rev)\s>//' | rg -om 1 "\d+" | rev) "$(zsh -ixc : 2>&1 | rg -m 1 $alias_output | rev | sed 's/$(echo $alias_output | rev)//' | rev | sed 's/+//' | rg -om 1 '^[^:]+')"
+         alias_output="$(alias $1)"
+         nano +$(zsh -ixc : 2>&1 | rg -m 1 $alias_output | rev | sed 's/$(echo $alias_output | rev)\s>//' | rg -om 1 "\d+" | rev) "$(zsh -ixc : 2>&1 | rg -m 1 $alias_output | rev | sed 's/$(echo $alias_output | rev)//' | rev | sed 's/+//' | rg -om 1 '^[^:]+')"
+#	alias_output="$(alias $1)"
+#    manip1="$(echo $(zsh -ixc : 2>&1 | rg -m 1 $alias_output | rev)) | sed 's/$(echo $alias_output | rev)//'"
+#    compliant_editors=("emacs" "nano" "vi" "nvim")
+#    for value in "${compliant_editors[*]}"; do
+#      if [ $EDITOR = $VALUE ] then
+#        $EDITOR +$(echo $manip1 | sed 's/\s>//' | rg -om 1 "\d+" | rev) $(echo $manip1 | rev | sed 's/+//' | rg -om 1 '^[^:]+')
+#        exit 0
+#      fi
+#    done
+#    nano +$(echo $manip1 | sed 's/\s>//' | rg -om 1 "\d+" | rev) $(echo $manip1 | rev | sed 's/+//' | rg -om 1 '^[^:]+')
 }
 
 
 alias gs="git status"
+
+
+alias extcountlist='find . -type f | grep -i -E -o "\.\w*$" | sort | uniq -c'
+
+
+# (cargo) cleans the supplied directory (or the current directory if none are specified)
+cc() {
+	pushd $1
+	cargo clean
+	popd
+}
