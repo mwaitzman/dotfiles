@@ -187,3 +187,9 @@ cc() {
 	cargo clean
 	popd
 }
+
+# make a directory and cd to it
+mcd() {
+	mkdir $1
+	cd $1
+}
