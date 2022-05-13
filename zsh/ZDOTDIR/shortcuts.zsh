@@ -193,3 +193,16 @@ mcd() {
 	mkdir $1
 	cd $1
 }
+
+# I type this manually too often, so..
+statwhich() {
+	stat $(which $1)
+}
+
+tranny() {
+if [ "$#" -eq "3" ]; then
+	/home/mwait/libretranslate translate $1 $2 $3 |jq '.translatedText' | sed "s/\"/\x1b[38;5;154m/" | rev | sed "s/\"//" | rev
+else
+	echo "\x1b[31minvalid amount of arguments"
+fi
+}
