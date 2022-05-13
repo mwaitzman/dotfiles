@@ -1,0 +1,17 @@
+keymap:
+  - name: Firefox
+    application:
+      only: [firefoxdeveloperedition]
+    remap:
+      # remap the show downloads key for linux to the windows keybind
+      C-j: C-Shift-y
+      # TODO: rebind old C-j (seems to be "search with ddg") to something else
+
+  - name: emacs-like keybindings in discord
+    application:
+      only: [discord]
+    remap:
+      C-a: home
+      C-Shift-a: C-a
+      C-e: end
+      C-Shift-e: C-e
