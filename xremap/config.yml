@@ -1,7 +1,0 @@
-keymap:
-  - name: Firefox
-    application:
-      only: [Firefox Developer Edition]
-    remap:
-      # remap the show downloads key for linux to the windows keybind
-      C-j: C-S-y
