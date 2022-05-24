@@ -131,6 +131,9 @@ function startthestuff() {
 	setsid -f /usr/lib/kdeconnectd&
 	setsid -f $(ff)&
 	swaymsg reload
+	swhks&
+	pkexec swhkd
+	plz xremap --watch=config ~/.config/xremap/xremap_config.yml
 }
 
 
@@ -205,4 +208,14 @@ if [ "$#" -eq "3" ]; then
 else
 	echo "\x1b[31minvalid amount of arguments"
 fi
+}
+
+alias shadered='SHADERed'
+
+# don't flood my diff output with Cargo.lock's, (but keep it in my git history)
+alias gd='git diff -- $(git diff --name-only | grep -Ev "Cargo.lock")'
+
+# Print Duplicate Lines (for source code). Naive, dumb, and very shitty implementation, but it'll suffice until I make a proper program for it
+pdl() {
+	sort $* | uniq -cd | sort -bn
 }
