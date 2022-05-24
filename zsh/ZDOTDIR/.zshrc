@@ -151,3 +151,7 @@ pcshw='~/devel/my_PCS_work/Homework/'
 
 #  not sure this is the right place to put this (originally used this for linking source-built libpanel into fm)
 export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH"
+
+# for https://github.com/bytecodealliance/wasmtime/
+export WASMTIME_HOME="$HOME/.wasmtime"
+export PATH="$WASMTIME_HOME/bin:$PATH"
